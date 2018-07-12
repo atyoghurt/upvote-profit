@@ -71,7 +71,7 @@ async function checkPosts(txData) {
 	
 	if (postsWithReplies>0 && percent>=minimum_percent_upvoted) { //ensures replies were made and frequency of upvotes meet input requirements
 		console.log("steemit.com/@"+txData.author,"upvotes ~"+percent+"% of replies, with average vote value of ~$"+vote_value);
-		document.getElementById("output").innerHTML += `<a href="https://steemit.com/@${txData.author}">@${txData.author}</a> upvotes ~${percent.toPrecision(0)} of replies, with average vote value of ~${vote_value.toPrecision(3)}.</br>`;
+		document.getElementById("output").innerHTML += `<a href="https://steemit.com/@${txData.author}">@${txData.author}</a> upvotes ~${percent.toPrecision(1)} of replies, with average vote value of ~${vote_value.toPrecision(3)}.</br>`;
 	}
 }
 
