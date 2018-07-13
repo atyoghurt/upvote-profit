@@ -25,6 +25,8 @@ steem.api.streamTransactions('head', function(err, result) {
 
 async function checkPosts(txData) {
 	
+	document.getElementById("checking").innerHTML = `Checking <a href="https://steemit.com/@${txData.author}">@${txData.author}</a>...`;
+	
 	//exit if user has already been checked
 	if (checked.indexOf(txData.author)>-1) return;
 	
@@ -48,7 +50,7 @@ async function checkPosts(txData) {
 	var avg_weight = 0; //average weight used by author to upvote
 	var postsWithReplies = 0; //number of posts with replies, used for averaging purposes
 	
-	//loop through posts, ignoring most recent one as author may not have time to respond to recently made comments
+	//loop through posts, ignoring most recent one as author may not have time to upvote recently made comments
 	for (var i=1;i<posts.length;i++) {
 		var upvote_info = await percentUpvoted(posts[i], txData); //get avg weight and percent of upvoted replies on current post being checked
 		if (upvote_info!=0) { //doesnt include posts without replies
@@ -71,7 +73,7 @@ async function checkPosts(txData) {
 	
 	if (postsWithReplies>0 && percent>=minimum_percent_upvoted) { //ensures replies were made and frequency of upvotes meet input requirements
 		console.log("steemit.com/@"+txData.author,"upvotes ~"+percent+"% of replies, with average vote value of ~$"+vote_value);
-		document.getElementById("output").innerHTML += `<a href="https://steemit.com/@${txData.author}">@${txData.author}</a> upvotes ~${percent.toPrecision(1)} of replies, with average vote value of ~${vote_value.toPrecision(3)}.</br>`;
+		document.getElementById("output").innerHTML += `<a href="https://steemit.com/@${txData.author}">@${txData.author}</a> upvotes ~${percent.toFixed(0)}% of replies, with average vote value of ~$${vote_value.toFixed(3)}.</br>`;
 	}
 }
 
