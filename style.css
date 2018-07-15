@@ -1,1 +1,100 @@
 
+body {
+	height:100%;
+}
+
+.content {
+	height:100%;
+	font-family: Courier New, Arial;
+	display: grid;
+	grid-template-columns: 5% 5% 32.5% 5% 5% 5% 32.5% 5% 5%;
+	grid-template-rows: 5% 10% 5% 10% 5% 10% 5% 40% 5% 5%;
+}
+
+.titlea {
+	grid-column-start: 3;
+	grid-row-start: 2;
+	grid-column-end: span 1;
+	grid-row-end: span 1;
+}
+
+.titleb {
+	grid-column-start: 7;
+	grid-row-start: 2;
+	grid-column-end: span 1;
+	grid-row-end: span 1;
+}
+
+.settinga {
+	grid-column-start: 3;
+	grid-row-start: 4;
+	grid-column-end: span 1;
+	grid-row-end: span 1;
+}
+.settingb {
+	grid-column-start: 3;
+	grid-row-start: 6;
+	grid-column-end: span 1;
+	grid-row-end: span 1;
+}
+
+.outputs {
+	grid-column-start: 7;
+	grid-row-start: 4;
+	grid-column-end: span 1;
+	grid-row-end: span 5;
+}
+
+.bg-settings {
+	grid-column-start: 2;
+	grid-row-start: 3;
+	grid-column-end: span 3;
+	grid-row-end: span 5;
+}
+
+.bg-output {
+	grid-column-start: 6;
+	grid-row-start: 3;
+	grid-column-end: span 3;
+	grid-row-end: span 7;
+}
+
+.bg-output, .bg-settings, #percent_upvoted, #upvote_value {
+	background-color: #eeeeee;
+}
+
+.outputs {
+	overflow:auto;
+	height:100%;
+	width:100%;
+}
+
+input {
+	width: 50%;
+	border: none;
+	border-bottom: 2px solid #cccccc;
+	text-align: center;
+	outline: none;
+	
+	-moz-transition: all .2s ease-in;
+	-o-transition: all .2s ease-in;
+	-webkit-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+}
+
+input:focus {
+	border-bottom: 2px solid #777777;
+}
+
+
+/* Removes default spinner at end of number input */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Removes default spinner at end of number input (firefox) */
+input[type=number] {
+    -moz-appearance:textfield;
+}
