@@ -1,29 +1,52 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>Steemit Profit Finder</title>
 	<script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
 	<script src="script.js"></script>
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-	<label for="percent_upvoted">Minimum % of Replies Upvoted</label>
-	<input type="number" min="0" max="100" value="50" step="1" id="percent_upvoted" name="percent_upvoted">
 	
-	</br></br>
 	
-	<label for="upvote_value">Minimum Upvote Value ($)</label>
-	<input type="number" min="0" value="0.01" step="0.01" id="upvote_value" name="upvote_value">
 	
-	</br></br>
+	<div class="content">
 	
-	<span id="checking"></span>
+		<div class="bg-settings"></div>
+		<div class="bg-output"></div>
 	
-	</br>
-	
-	<span id="output"></span>
-
+		<div class="titlea"><center>
+			<h3>Search Settings</h3>
+		</center></div>
+		<div class="titleb"><center>
+			<h3>Accounts Found</h3>
+		</center></div>
+		
+		<div class="settinga"><center>
+			<label for="percent_upvoted">Minimum % of Replies Upvoted</label>
+			
+			</br>
+			
+			<input type="number" min="0" max="100" value="50" step="1" id="percent_upvoted" name="percent_upvoted">
+			
+		</center></div>
+		
+		<div class="settingb"><center>
+			<label for="upvote_value">Minimum Upvote Value ($)</label>
+			
+			</br>
+			
+			<input type="number" min="0" value="0.01" step="0.001" id="upvote_value" name="upvote_value">
+		</center></div>
+		
+		<div class="outputs">
+			<span id="checking">Loading...</span>
+			
+			</br>
+			
+			<span id="output"></br></span>
+		</div>
+	</div>
 	
 </body>
